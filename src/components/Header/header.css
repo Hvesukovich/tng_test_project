@@ -12,3 +12,71 @@
     font-size: 1.8em;
     line-height: 1.2em;
 }
+
+.header__toogle {
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+.header__toogle__title {
+    font-size: 30px;
+    margin-right: 5px;
+}
+
+.header__switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.header__checkbox {
+    display:none;
+}
+
+.header__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.header__slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.header__checkbox:checked + .header__slider {
+    background-color: #2196F3;
+}
+
+.header__checkbox:focus + .header__slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+.header__checkbox:checked + .header__slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.header__slider.header__round {
+    border-radius: 34px;
+}
+
+.header__slider.header__round:before {
+    border-radius: 50%;
+}

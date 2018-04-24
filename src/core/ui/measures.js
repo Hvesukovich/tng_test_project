@@ -1,5 +1,6 @@
-import { distanceBetweenPoints, mmToIn } from '../utils';
-import { 
+import { distanceBetweenPoints, mmToIn, mmToCm  } from '../utils';
+import { toogle } from '../../components/Header/Header';
+import {
     ITEM_MARGIN_TOP,
     ITEM_MARGIN_LEFT,
     MEASURE_HEIGHT,
@@ -49,9 +50,19 @@ export const measures = (item, size) => {
         );
 
         //setup text labels
-        let text = {
-            caption: `${mmToIn(measure.size)} in`
-        };
+        let text;
+        if (toogle) {
+            text = {
+                caption: `${mmToIn(measure.size)} in`
+            };
+        } else {
+            text = {
+                caption: `${mmToCm(measure.size)} cm`
+            };
+        }
+        // let text = {
+        //     caption: `${mmToIn(measure.size)} in`
+        // };
         const { arrowWidth, textOffsetX, textOffsetY } = getMeasureDimensions(measureWidth, text.caption, verticalMeasure);
         text.top = `${textOffsetY}px`;
         text.left = `${textOffsetX}px`;

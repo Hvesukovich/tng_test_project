@@ -21,6 +21,7 @@ export const Measure = (props) => {
         left: props.text.left,
         width: props.text.width
     };
+    // console.log(props);
 
     return (<div className="measure" style={measureStyle}>
         <div className="measure__left" style={arrowStyle}>
